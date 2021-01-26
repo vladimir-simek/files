@@ -45,8 +45,8 @@ public class Main {
         try {
             BufferedReader br = new BufferedReader(new FileReader("in.txt"));
             while (br.readLine() != null) {
-                br.readLine().replaceFirst("N ", "-");
-                br.readLine().replaceFirst("P ", "+");
+                br.readLine().replace("N ", "-");
+                br.readLine().replace("P ", "+");
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -58,11 +58,14 @@ public class Main {
         int a = 0;
         int wut = 0;
         String sss;
+        String content;
         try {
             BufferedReader br = new BufferedReader(new FileReader("in.txt"));
             while (a != 50002) {
-                sss = br.readLine().replace("N ", "-");
-                sss = br.readLine().replace("P ", "+");
+                content = br.readLine();
+                sss = content;
+                sss.replace("N ", "-");
+                sss.replace("P ", "+");
                 wut = Integer.parseInt(sss);
                 sup += wut;
                 a++;
