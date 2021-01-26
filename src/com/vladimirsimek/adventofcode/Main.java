@@ -45,14 +45,15 @@ public class Main {
             while (helou != null) {
                 String sup = "";
                 helou = br.readLine();
-                if (helou.charAt(0) == 'N') {
-                    sup = helou.replaceAll("N ", "-");
-                    af += Integer.parseInt(sup);
-                } else if (helou.charAt(0) == 'P') {
-                    sup = helou.replaceAll("P ", "+");
-                    af += Integer.parseInt(sup);
-                }
-                }
+                sup = helou.replaceAll("N ", "-");
+                af += Integer.parseInt(sup);
+            }
+            while (helou != null) {
+                String supsew = "";
+                helou = br.readLine();
+                supsew = helou.replaceAll("P ", "+");
+                af += Integer.parseInt(supsew);
+            }
         } catch (Exception e) {
             System.out.println("hey");
         }
