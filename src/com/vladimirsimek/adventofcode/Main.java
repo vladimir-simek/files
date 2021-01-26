@@ -63,9 +63,9 @@ public class Main {
             BufferedReader br = new BufferedReader(new FileReader("in.txt"));
             while (a != 50002) {
                 content = br.readLine();
-                sss = content;
-                sss.replace("N ", "-");
-                sss.replace("P ", "+");
+
+                sss = content.replace("N ", "-");
+                sss = content.replace("P ", "+");
                 wut = Integer.parseInt(sss);
                 sup += wut;
                 a++;
