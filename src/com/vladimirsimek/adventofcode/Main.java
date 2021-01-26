@@ -1,8 +1,8 @@
 package com.vladimirsimek.adventofcode;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
 
@@ -38,5 +38,38 @@ public class Main {
         }
 
         System.out.println("Successfully written Hello world 3 times.");
+        String blah = "safasf";
+
+        ArrayList<String> bruh = new ArrayList<>();
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("in.txt"));
+            while (br.readLine() != null) {
+                br.readLine().replaceFirst("N ", "-");
+                br.readLine().replaceFirst("P ", "+");
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        int sup = 0;
+        int a = 0;
+        int wut = 0;
+        String sss;
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("in.txt"));
+            while (a != 50002) {
+                sss = br.readLine().replace("N ", "-");
+                sss = br.readLine().replace("P ", "+");
+                wut = Integer.parseInt(sss);
+                sup += wut;
+                a++;
+            }
+        } catch (Exception e) {
+            System.out.println("fuck");
+        }
+        System.out.println(sup);
     }
 }
