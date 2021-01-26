@@ -38,6 +38,24 @@ public class Main {
         }
 
         System.out.println("Successfully written Hello world 3 times.");
-
+        String helou = "hi";
+        int af = 0;
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("in.txt"));
+            while (helou != null) {
+                String sup = "";
+                helou = br.readLine();
+                if (helou.charAt(0) == 'N') {
+                    sup = helou.replaceAll("N ", "-");
+                    af += Integer.parseInt(sup);
+                } else if (helou.charAt(0) == 'P') {
+                    sup = helou.replaceAll("P ", "+");
+                    af += Integer.parseInt(sup);
+                }
+                }
+        } catch (Exception e) {
+            System.out.println("hey");
+        }
+        System.out.println(af);
     }
 }
